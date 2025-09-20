@@ -508,6 +508,10 @@
 </head>
 <body>
     <div id="particles-js"></div>
+    <!-- stats - count particles -->
+    <div class="count-particles">
+        <span class="js-count-particles">--</span> particles
+    </div>
     <div class="presentation-container">
         <!-- Slide 1: Hero -->
         <div class="slide hero-slide">
@@ -884,9 +888,30 @@
         });
     </script>
     
-    <script src="/demo/particles.js"></script>
+    <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
+    <script src="/demo/particles.min.js"></script>
+    <!-- stats.js lib -->
+    <script src="/demo/stats.min.js"></script>
     <script>
-        particlesJS.load('particles-js', '/demo/particles-config.json');
+        particlesJS.load('particles-js', '/demo/particles-config.json', function() {
+            console.log('particles.js loaded - callback');
+            // Update particle count
+            updateParticleCount();
+        });
+        
+        // Function to update particle count
+        function updateParticleCount() {
+            var countEl = document.querySelector('.js-count-particles');
+            if (window.pJSDom && window.pJSDom[0] && window.pJSDom[0].pJS.particles.array) {
+                var count = window.pJSDom[0].pJS.particles.array.length;
+                if (countEl) {
+                    countEl.textContent = count;
+                }
+            }
+        }
+        
+        // Update count every second
+        setInterval(updateParticleCount, 1000);
     </script>
 </body>
 </html>
