@@ -18,10 +18,20 @@
             overflow-x: hidden;
         }
 
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+        }
+
         .presentation-container {
             max-width: 1200px;
             margin: 0 auto;
             position: relative;
+            z-index: 2;
         }
 
         .slide {
@@ -371,7 +381,7 @@
         }
 
         .cta-section {
-            background: linear-gradient(135deg, #E91E63 0%, #AD1457 100%);
+            background: linear-gradient(135deg, #212b22 0%, #2b2b2b 80%, #4CAF50 100%);
             color: white;
             text-align: center;
             padding: 50px;
@@ -380,10 +390,10 @@
         }
 
         .cta-button {
-            background: white;
-            color: #E91E63;
+            background: #212b22;
+            color: #4CAF50;
+            border: 2px solid #4CAF50;
             padding: 15px 40px;
-            border: none;
             border-radius: 50px;
             font-size: 1.2em;
             font-weight: bold;
@@ -393,6 +403,8 @@
         }
 
         .cta-button:hover {
+            background: #4CAF50;
+            color: #fff;
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
@@ -495,6 +507,7 @@
     </style>
 </head>
 <body>
+    <div id="particles-js"></div>
     <div class="presentation-container">
         <!-- Slide 1: Hero -->
         <div class="slide hero-slide">
@@ -869,6 +882,11 @@
                 this.style.transform = 'translateY(0) scale(1)';
             });
         });
+    </script>
+    
+    <script src="/demo/particles.js"></script>
+    <script>
+        particlesJS.load('particles-js', '/demo/particles.json');
     </script>
 </body>
 </html>
