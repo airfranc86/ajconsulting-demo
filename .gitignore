@@ -1,0 +1,6 @@
+# Log files
+*.log
+server.log
+
+# Temporary files
+/tmp/
