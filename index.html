@@ -4,18 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A&J Consulting - Sistema de Gestión Clínica Inteligente</title>
+    
+    <!-- 
+    ====================================================================
+    PARTICLES.JS CDN LOADING CON FALLBACK
+    ====================================================================
+    Carga de la librería particles.js desde CDN con fallback a local
+    CDN principal: https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js
+    Fallback: archivo local en /demo/particles.js
+    -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js" 
+            onerror="document.write('<script src=\'/demo/particles.js\'><\/script>')"></script>
+    
     <style>
+        /* 
+        ====================================================================
+        RESET CSS Y CONFIGURACIÓN BASE
+        ====================================================================
+        Reset universal para normalizar estilos en todos los navegadores
+        */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-<!-- Carga la librería de partículas (JS) -->
-<script src="/demo/particles.js"></script>
-<!-- Carga tu configuración personalizada desde particles-config.json -->
-<script>
-    particlesJS.load('particles-js', '/demo/particles-config.json');
-</script>
+        /* 
+        ====================================================================
+        CONFIGURACIÓN GLOBAL DEL CUERPO Y TIPOGRAFÍA
+        ====================================================================
+        Configuración base del documento con fuentes modernas y gradiente de fondo
+        */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
@@ -23,6 +41,12 @@
             overflow-x: hidden;
         }
 
+        /* 
+        ====================================================================
+        CONFIGURACIÓN DE PARTICLES.JS - FONDO ANIMADO
+        ====================================================================
+        Contenedor para el fondo de partículas animadas que se renderiza detrás del contenido
+        */
         #particles-js {
             position: fixed;
             top: 0;
@@ -32,6 +56,12 @@
             z-index: 0;
         }
 
+        /* 
+        ====================================================================
+        CONTENEDOR PRINCIPAL DE LA PRESENTACIÓN
+        ====================================================================
+        Layout principal para organizar las diapositivas de la presentación
+        */
         .presentation-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -39,6 +69,12 @@
             z-index: 2;
         }
 
+        /* 
+        ====================================================================
+        ESTILOS DE DIAPOSITIVAS (SLIDES)
+        ====================================================================
+        Configuración para cada slide individual de la presentación
+        */
         .slide {
             min-height: 100vh;
             padding: 60px 40px;
@@ -67,6 +103,12 @@
             background: linear-gradient(90deg, #4CAF50, #2196F3, #FF9800, #E91E63);
         }
 
+        /* 
+        ====================================================================
+        ANIMACIONES GLOBALES
+        ====================================================================
+        Keyframes para animaciones de entrada y efectos visuales
+        */
         @keyframes slideIn {
             to {
                 opacity: 1;
@@ -82,6 +124,12 @@
             animation-delay: 0.1s;
         }
 
+        /* 
+        ====================================================================
+        SLIDE HERO (PRIMERA DIAPOSITIVA) - BRANDING
+        ====================================================================
+        Estilos específicos para la diapositiva principal de presentación de la marca
+        */
         .hero-slide {
             text-align: center;
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 25%, #00b4db 50%, #0083b0 75%, #00a693 100%);
@@ -106,6 +154,12 @@
             z-index: 2;
         }
 
+        /* 
+        ====================================================================
+        COMPONENTES DE LOGO Y BRANDING
+        ====================================================================
+        Estilos para el logo, iconos y elementos de identidad de marca
+        */
         .modern-logo-container {
             display: flex;
             flex-direction: column;
@@ -153,6 +207,11 @@
             text-transform: uppercase;
         }
 
+        /* 
+        ====================================================================
+        ICONOS DEL DASHBOARD Y ANIMACIONES ESPECÍFICAS
+        ====================================================================
+        */
         .dashboard-icons {
             display: flex;
             justify-content: center;
@@ -179,6 +238,11 @@
             animation-delay: 0.6s;
         }
 
+        /* 
+        ====================================================================
+        KEYFRAMES - ANIMACIONES DE LOGO Y ELEMENTOS INTERACTIVOS
+        ====================================================================
+        */
         @keyframes logoEntrance {
             0% {
                 opacity: 0;
@@ -210,6 +274,12 @@
             }
         }
 
+        /* 
+        ====================================================================
+        ELEMENTOS DE NAVEGACIÓN Y CONTACTO
+        ====================================================================
+        Estilos para información de contacto y elementos interactivos
+        */
         .logo {
             /* Keep this for backward compatibility but hide it */
             display: none;
@@ -241,6 +311,12 @@
             transform: translateY(-5px);
         }
 
+        /* 
+        ====================================================================
+        TIPOGRAFÍA Y ENCABEZADOS
+        ====================================================================
+        Configuración jerárquica de títulos y textos del contenido
+        */
         h1 {
             font-size: 2.5em;
             margin-bottom: 30px;
@@ -266,6 +342,12 @@
             gap: 10px;
         }
 
+        /* 
+        ====================================================================
+        GRIDS DE CARACTERÍSTICAS Y TARJETAS
+        ====================================================================
+        Layout responsivo para mostrar servicios y características del producto
+        */
         .feature-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -293,6 +375,11 @@
             font-size: 1.3em;
         }
 
+        /* 
+        ====================================================================
+        LISTAS DE CARACTERÍSTICAS Y BENEFICIOS
+        ====================================================================
+        */
         .feature-list {
             list-style: none;
             margin: 20px 0;
@@ -314,6 +401,12 @@
             font-size: 1.2em;
         }
 
+        /* 
+        ====================================================================
+        MÉTRICAS Y ESTADÍSTICAS
+        ====================================================================
+        Componentes para mostrar KPIs y datos importantes
+        */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -347,6 +440,11 @@
             margin-bottom: 10px;
         }
 
+        /* 
+        ====================================================================
+        TESTIMONIOS Y CONTENIDO DESTACADO
+        ====================================================================
+        */
         .testimonial {
             background: linear-gradient(145deg, #f8f9fa 0%, #e9ecef 100%);
             padding: 30px;
@@ -367,6 +465,12 @@
             opacity: 0.3;
         }
 
+        /* 
+        ====================================================================
+        PRECIOS Y LLAMADAS A LA ACCIÓN (CTA)
+        ====================================================================
+        Componentes para mostrar precios y botones de acción
+        */
         .pricing-card {
             background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
             padding: 40px;
@@ -414,6 +518,11 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
 
+        /* 
+        ====================================================================
+        STACK TECNOLÓGICO Y HERRAMIENTAS
+        ====================================================================
+        */
         .tech-stack {
             display: flex;
             justify-content: space-around;
@@ -436,6 +545,12 @@
             transform: scale(1.05);
         }
 
+        /* 
+        ====================================================================
+        BARRAS DE PROGRESO Y ANIMACIONES
+        ====================================================================
+        Componentes para mostrar niveles de rendimiento y capacidades
+        */
         .progress-bar {
             width: 100%;
             height: 8px;
@@ -459,6 +574,12 @@
             }
         }
 
+        /* 
+        ====================================================================
+        MEDIA QUERIES - DISEÑO RESPONSIVO
+        ====================================================================
+        Adaptaciones para dispositivos móviles y tablets
+        */
         @media (max-width: 768px) {
             .slide {
                 margin: 10px;
@@ -512,10 +633,34 @@
     </style>
 </head>
 <body>
+    <!-- 
+    ====================================================================
+    CONTENEDOR DE PARTICLES.JS
+    ====================================================================
+    Div que contiene el canvas de fondo animado con partículas
+    ID requerido: particles-js (usado por la librería)
+    -->
     <div id="particles-js"></div>
+    
+    <!-- 
+    ====================================================================
+    CONTENEDOR PRINCIPAL DE LA PRESENTACIÓN
+    ====================================================================
+    Wrapper principal que contiene todas las diapositivas de la presentación
+    -->
     <div class="presentation-container">
-        <!-- Slide 1: Hero -->
+        <!-- 
+        ====================================================================
+        SLIDE 1: HERO - PÁGINA PRINCIPAL DE BRANDING
+        ====================================================================
+        Primera impresión con logo, nombre de la empresa y información de contacto
+        Para modificar: 
+        - Logo: cambiar src en img tag y logo-text class
+        - Colores: modificar gradientes en .hero-slide
+        - Contacto: actualizar enlaces en .contact-item
+        -->
         <div class="slide hero-slide">
+            <!-- Logo y branding principal -->
             <div class="modern-logo-container">
                 <div class="logo-icon-section">
                     <div class="logo-icon">💼</div>
@@ -529,11 +674,15 @@
                     <div class="dashboard-icon">⚡</div>
                 </div>
             </div>
+            
+            <!-- Tagline con logo -->
             <div class="tagline" style="display:flex;align-items:center;justify-content:center;gap:12px;">
                 <img src="A&JLOGO.png" alt="A&J Consulting Logo" style="height:32px;width:auto;vertical-align:middle;" loading="lazy">
                 <span>Transformamos tus datos en decisiones inteligentes</span>
             </div>
             <p style="font-size: 1.2em; margin-bottom: 30px;">Sistema de Gestión Clínica con Dashboard Inteligente de KPIs</p>
+            
+            <!-- Información de contacto - PERSONALIZAR AQUÍ -->
             <div class="contact-info">
                 <div class="contact-item">📧 ajconsulting@gmail.com</div>
                 <div class="contact-item">📱 LinkedIn: /company/ajconsulting</div>
@@ -541,7 +690,13 @@
             </div>
         </div>
 
-        <!-- Slide 2: Seguridad -->
+        <!-- 
+        ====================================================================
+        SLIDE 2: SEGURIDAD - CARACTERÍSTICAS DE PROTECCIÓN DE DATOS
+        ====================================================================
+        Información sobre medidas de seguridad y cumplimiento normativo
+        Para modificar: agregar/quitar elementos en .feature-card
+        -->
         <div class="slide">
             <h1>🛡️ SEGURIDAD Y PROTECCIÓN DE DATOS</h1>
             <h2>Arquitectura de Seguridad Multicapa</h2>
@@ -589,7 +744,13 @@
             </div>
         </div>
 
-        <!-- Slide 3: Analytics y Gráficas -->
+        <!-- 
+        ====================================================================
+        SLIDE 3: ANALYTICS - GRÁFICAS Y ANÁLISIS DE DATOS
+        ====================================================================
+        Información sobre capacidades de análisis y visualización de datos
+        Para modificar métricas: editar contenido en .feature-card
+        -->
         <div class="slide">
             <h1>📊 GRÁFICAS Y ANÁLISIS PARA MAXIMIZAR RENTABILIDAD</h1>
             <h2>Dashboard Ejecutivo - KPIs en Tiempo Real</h2>
@@ -703,30 +864,42 @@
             </div>
         </div>
 
-        <!-- Slide 5: ROI y Casos de Éxito -->
+        <!-- 
+        ====================================================================
+        SLIDE 5: ROI Y CASOS DE ÉXITO - MÉTRICAS DE VALOR
+        ====================================================================
+        Estadísticas de retorno de inversión y testimonios
+        Para modificar métricas: cambiar valores en .stat-number y --progress-width
+        -->
         <div class="slide">
             <h1>💼 VALOR EMPRESARIAL DEMOSTRABLE</h1>
             
+            <!-- ROI y métricas principales -->
             <h2>ROI Comprobado:</h2>
             <div class="stats-grid">
+                <!-- Métrica 1 - EDITABLE -->
                 <div class="stat-card">
                     <div class="stat-number">75%</div>
                     <div>Reducción en tiempo de análisis</div>
                 </div>
+                <!-- Métrica 2 - EDITABLE -->
                 <div class="stat-card">
                     <div class="stat-number">35%</div>
                     <div>Mejora en identificación de oportunidades</div>
                 </div>
+                <!-- Métrica 3 - EDITABLE -->
                 <div class="stat-card">
                     <div class="stat-number">90%</div>
                     <div>Precisión en detección de patrones</div>
                 </div>
+                <!-- Métrica 4 - EDITABLE -->
                 <div class="stat-card">
                     <div class="stat-number">300%</div>
                     <div>ROI promedio en 6 meses</div>
                 </div>
             </div>
             
+            <!-- Testimonios - PERSONALIZAR AQUÍ -->
             <h2>Casos de Éxito:</h2>
             <div class="testimonial">
                 Identificamos que los martes por la tarde teníamos 40% más inasistencias. Reajustamos horarios y aumentamos ingresos 25% en 3 meses.
@@ -764,10 +937,17 @@
             </div>
         </div>
 
-        <!-- Slide 7: Pricing -->
+        <!-- 
+        ====================================================================
+        SLIDE 7: PRECIOS - INFORMACIÓN DE INVERSIÓN Y SOPORTE
+        ====================================================================
+        Detalles de precios y servicios incluidos
+        Para modificar precios: cambiar valores en .price
+        -->
         <div class="slide">
             <h1>💳 INVERSIÓN Y SOPORTE</h1>
             
+            <!-- Tarjeta de precios - PERSONALIZAR AQUÍ -->
             <div class="pricing-card">
                 <h3>📦 Paquete Completo</h3>
                 <div class="price">USD $700</div>
@@ -778,6 +958,7 @@
                     <p>Soporte y Mantenimiento Mensual</p>
                 </div>
                 
+                <!-- Lista de beneficios incluidos -->
                 <h4 style="margin: 30px 0 20px 0; color: #4CAF50;">Incluye:</h4>
                 <ul class="feature-list" style="text-align: left; max-width: 400px; margin: 0 auto;">
                     <li>Acceso completo al sistema</li>
@@ -815,8 +996,15 @@
             </div>
         </div>
 
-        <!-- Slide 9: CTA Final -->
+        <!-- 
+        ====================================================================
+        SLIDE 9: CTA FINAL - LLAMADA A LA ACCIÓN
+        ====================================================================
+        Sección final para conversión con botones de contacto
+        Para modificar contactos: actualizar onclick handlers en .cta-button
+        -->
         <div class="slide">
+            <!-- Sección principal de CTA -->
             <div class="cta-section">
                 <h2 style="color: white; margin-bottom: 40px;">¿Listo para transformar tus datos en decisiones inteligentes?</h2>
                 
@@ -824,6 +1012,7 @@
                     Solicita tu <strong>demostración gratuita</strong> y descubre cómo nuestra solución puede multiplicar la rentabilidad de tu clínica.
                 </p>
                 
+                <!-- Botones de contacto - PERSONALIZAR AQUÍ -->
                 <div style="margin: 40px 0;">
                     <button class="cta-button" onclick="window.location.href='mailto:ajconsulting@gmail.com'">
                         📧 Contactar por Email
@@ -842,6 +1031,7 @@
                 </div>
             </div>
             
+            <!-- Footer corporativo -->
             <div style="text-align: center; margin-top: 40px; color: #666;">
                 <p><strong>A&J Consulting® - Especialistas en Transformación Digital para Clínicas</strong></p>
                 <p style="margin-top: 10px; font-size: 0.9em;"><em>Documento confidencial - Solo para uso del destinatario autorizado</em></p>
@@ -849,8 +1039,19 @@
         </div>
     </div>
 
+    <!-- 
+    ====================================================================
+    JAVASCRIPT - FUNCIONALIDAD INTERACTIVA
+    ====================================================================
+    Scripts para animaciones, interactividad y efectos visuales
+    -->
     <script>
-        // Animación de las barras de progreso
+        /* 
+        ====================================================================
+        ANIMACIONES DE BARRAS DE PROGRESO
+        ====================================================================
+        Intersection Observer para activar animaciones cuando entran en viewport
+        */
         const progressBars = document.querySelectorAll('.progress-fill');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -864,7 +1065,12 @@
             observer.observe(bar);
         });
 
-        // Smooth scroll para navegación
+        /* 
+        ====================================================================
+        INICIALIZACIÓN Y ANIMACIONES DE SLIDES
+        ====================================================================
+        Configuración de animaciones escalonadas para las diapositivas
+        */
         document.addEventListener('DOMContentLoaded', function() {
             // Agregar navegación suave si se necesita
             const slides = document.querySelectorAll('.slide');
@@ -874,7 +1080,12 @@
             });
         });
 
-        // Interactividad adicional
+        /* 
+        ====================================================================
+        INTERACTIVIDAD DE TARJETAS DE CARACTERÍSTICAS
+        ====================================================================
+        Efectos hover mejorados para las feature cards
+        */
         const featureCards = document.querySelectorAll('.feature-card');
         featureCards.forEach(card => {
             card.addEventListener('mouseenter', function() {
@@ -887,9 +1098,152 @@
         });
     </script>
     
-    <script src="/demo/particles.js"></script>
+    <!-- 
+    ====================================================================
+    PARTICLES.JS - CONFIGURACIÓN DE FONDO ANIMADO CON FALLBACK
+    ====================================================================
+    Inicialización de particles.js con manejo de errores
+    Usando CDN con fallback a archivo local para máxima compatibilidad
+    -->
     <script>
-        particlesJS.load('particles-js', '/demo/particles-config.json');
+        /* 
+        ====================================================================
+        FUNCIÓN DE INICIALIZACIÓN DE PARTICLES.JS CON ERROR HANDLING
+        ====================================================================
+        */
+        function initParticles() {
+            // Verificar si particlesJS está disponible
+            if (typeof particlesJS !== 'undefined') {
+                /* 
+                ====================================================================
+                CONFIGURACIÓN DE PARTICLES.JS
+                ====================================================================
+                Configuración personalizada para el efecto de partículas de fondo
+                Para modificar efectos: cambiar valores en el objeto de configuración
+                */
+                particlesJS('particles-js', {
+                    "particles": {
+                        "number": {
+                            "value": 80,                // Número de partículas - EDITABLE
+                            "density": {
+                                "enable": true,
+                                "value_area": 800       // Área de densidad - EDITABLE
+                            }
+                        },
+                        "color": {
+                            "value": "#ffffff"          // Color de partículas - EDITABLE
+                        },
+                        "shape": {
+                            "type": "circle",           // Forma: circle, edge, triangle, polygon - EDITABLE
+                            "stroke": {
+                                "width": 0,
+                                "color": "#000000"
+                            },
+                            "polygon": {
+                                "nb_sides": 5
+                            }
+                        },
+                        "opacity": {
+                            "value": 0.5,               // Transparencia - EDITABLE
+                            "random": false,
+                            "anim": {
+                                "enable": false,
+                                "speed": 1,
+                                "opacity_min": 0.1,
+                                "sync": false
+                            }
+                        },
+                        "size": {
+                            "value": 5,                 // Tamaño de partículas - EDITABLE
+                            "random": true,
+                            "anim": {
+                                "enable": false,
+                                "speed": 40,
+                                "size_min": 0.1,
+                                "sync": false
+                            }
+                        },
+                        "line_linked": {
+                            "enable": true,             // Líneas conectoras - EDITABLE
+                            "distance": 150,            // Distancia de conexión - EDITABLE
+                            "color": "#ffffff",         // Color de líneas - EDITABLE
+                            "opacity": 0.4,             // Transparencia de líneas - EDITABLE
+                            "width": 1                  // Grosor de líneas - EDITABLE
+                        },
+                        "move": {
+                            "enable": true,
+                            "speed": 6,                 // Velocidad de movimiento - EDITABLE
+                            "direction": "none",        // Dirección: none, top, bottom, left, right - EDITABLE
+                            "random": false,
+                            "straight": false,
+                            "out_mode": "out",
+                            "attract": {
+                                "enable": false,
+                                "rotateX": 600,
+                                "rotateY": 1200
+                            }
+                        }
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": {
+                            "onhover": {
+                                "enable": true,         // Efecto hover - EDITABLE
+                                "mode": "repulse"       // Modo: grab, bubble, repulse - EDITABLE
+                            },
+                            "onclick": {
+                                "enable": true,         // Efecto click - EDITABLE
+                                "mode": "push"          // Modo: push, remove, bubble, repulse - EDITABLE
+                            },
+                            "resize": true
+                        },
+                        "modes": {
+                            "grab": {
+                                "distance": 400,
+                                "line_linked": {
+                                    "opacity": 1
+                                }
+                            },
+                            "bubble": {
+                                "distance": 400,
+                                "size": 40,
+                                "duration": 2,
+                                "opacity": 8,
+                                "speed": 3
+                            },
+                            "repulse": {
+                                "distance": 200         // Distancia de repulsión - EDITABLE
+                            },
+                            "push": {
+                                "particles_nb": 4       // Partículas añadidas por click - EDITABLE
+                            },
+                            "remove": {
+                                "particles_nb": 2
+                            }
+                        }
+                    },
+                    "retina_detect": true               // Detección de pantallas Retina - EDITABLE
+                });
+                console.log('Particles.js inicializado correctamente');
+            } else {
+                console.warn('Particles.js no está disponible - continuando sin efectos de fondo');
+                // Ocultar el contenedor de particles si la librería no carga
+                const particlesContainer = document.getElementById('particles-js');
+                if (particlesContainer) {
+                    particlesContainer.style.display = 'none';
+                }
+            }
+        }
+
+        // Intentar inicializar particles cuando el DOM esté listo
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initParticles);
+        } else {
+            initParticles();
+        }
+
+        // Fallback adicional - intentar nuevamente después de un delay
+        setTimeout(initParticles, 1000);
     </script>
 </body>
 </html>
